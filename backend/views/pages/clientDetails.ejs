@@ -1,0 +1,42 @@
+<section class="mb-3 d-flex gap-2">
+  <a class="btn btn-outline-secondary btn-sm" href="/clients">Back to Clients</a>
+  <a class="btn btn-outline-secondary btn-sm" href="/clients/<%= clientt.id %>/edit">Edit</a>
+  <a class="btn btn-outline-danger btn-sm" href="/clients/<%= clientt.id %>/delete">Delete</a>
+  <a class="btn btn-outline-dark btn-sm" href="/">Home</a>
+</section>
+
+<section class="card shadow-sm">
+  <div class="card-body">
+    <h2 class="h5 mb-2">Client Profile</h2>
+
+    <dl class="row mb-0">
+      <dt class="col-sm-3">Client ID</dt>
+      <dd class="col-sm-9"><%= clientt.id %></dd>
+
+      <dt class="col-sm-3">Full Name</dt>
+      <dd class="col-sm-9"><%= clientt.fullName %></dd>
+
+      <dt class="col-sm-3">Email</dt>
+      <dd class="col-sm-9"><a href="mailto:<%= clientt.email %>"><%= clientt.email %></a></dd>
+
+      <dt class="col-sm-3">Risk Category</dt>
+      <dd class="col-sm-9">
+        <% if (clientt.riskCategory === "High") { %>
+          <span class="badge text-bg-danger">High</span>
+        <% } else if (clientt.riskCategory === "Medium") { %>
+          <span class="badge text-bg-warning">Medium</span>
+        <% } else { %>
+          <span class="badge text-bg-success">Low</span>
+        <% } %>
+      </dd>
+
+      <dt class="col-sm-3">Created Date</dt>
+      <dd class="col-sm-9"><%= clientt.createdDate %></dd>
+    </dl>
+
+    <hr>
+    <div class="small text-muted">
+      API equivalent: <code>/api/clients/<%= clientt.id %></code>
+    </div>
+  </div>
+</section>

@@ -1,0 +1,30 @@
+[
+  {
+    "id": 101,
+    "fullName": "Ava Thompson",
+    "email": "ava.thompson@northstar.example",
+    "riskCategory": "Low",
+    "createdDate": "2025-10-02"
+  },
+  {
+    "id": 102,
+    "fullName": "Noah Patel",
+    "email": "noah.patel@northstar.example",
+    "riskCategory": "Medium",
+    "createdDate": "2025-10-14"
+  },
+  {
+    "id": 103,
+    "fullName": "Sophia Chen",
+    "email": "sophia.chen@northstar.example",
+    "riskCategory": "High",
+    "createdDate": "2025-11-03"
+  },
+  {
+    "id": 104,
+    "fullName": "Liam O'Connor",
+    "email": "liam.oconnor@northstar.example",
+    "riskCategory": "Medium",
+    "createdDate": "2025-11-18"
+  }
+]

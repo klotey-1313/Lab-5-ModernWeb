@@ -1,0 +1,33 @@
+<section class="mb-3 d-flex gap-2">
+  <a class="btn btn-outline-secondary btn-sm" href="/clients/<%= clientt.id %>">Back to Profile</a>
+  <a class="btn btn-outline-secondary btn-sm" href="/clients">Back to Clients</a>
+  <a class="btn btn-outline-dark btn-sm" href="/">Home</a>
+</section>
+
+<section class="card border-danger shadow-sm">
+  <div class="card-body">
+    <h2 class="h5 mb-3 text-danger">Delete Client</h2>
+
+    <p class="mb-2">
+      You are about to permanently delete this client record:
+    </p>
+
+    <ul class="mb-3">
+      <li><strong>ID:</strong> <%= clientt.id %></li>
+      <li><strong>Name:</strong> <%= clientt.fullName %></li>
+      <li><strong>Email:</strong> <%= clientt.email %></li>
+      <li><strong>Risk:</strong> <%= clientt.riskCategory %></li>
+    </ul>
+
+    <form method="POST" action="/clients/<%= clientt.id %>/delete">
+      <div class="d-flex gap-2">
+        <button type="submit" class="btn btn-danger">Yes, Delete</button>
+        <a class="btn btn-outline-secondary" href="/clients/<%= clientt.id %>">Cancel</a>
+      </div>
+    </form>
+
+    <div class="mt-3 small text-muted">
+      Tip: This is a server-side form submit (POST) for the lab.
+    </div>
+  </div>
+</section>

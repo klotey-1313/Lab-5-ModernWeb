@@ -1,0 +1,62 @@
+<section class="mb-3 d-flex gap-2">
+  <a class="btn btn-outline-secondary btn-sm" href="/clients/<%= clientt.id %>">Back to Profile</a>
+  <a class="btn btn-outline-secondary btn-sm" href="/clients">Back to Clients</a>
+  <a class="btn btn-outline-dark btn-sm" href="/">Home</a>
+</section>
+
+<section class="card shadow-sm">
+  <div class="card-body">
+    <h2 class="h5 mb-1">Edit Client</h2>
+    <p class="text-muted mb-3">Client ID: <strong><%= clientt.id %></strong></p>
+
+    <% if (errors && errors.length) { %>
+      <div class="alert alert-danger" role="alert">
+        <ul class="mb-0">
+          <% errors.forEach(e => { %>
+            <li><%= e %></li>
+          <% }) %>
+        </ul>
+      </div>
+    <% } %>
+
+    <form method="POST" action="/clients/<%= clientt.id %>" novalidate>
+      <div class="mb-3">
+        <label for="fullName" class="form-label">Full Name</label>
+        <input
+          id="fullName"
+          name="fullName"
+          type="text"
+          class="form-control"
+          required
+          value="<%= form?.fullName || '' %>"
+        />
+      </div>
+
+      <div class="mb-3">
+        <label for="email" class="form-label">Email</label>
+        <input
+          id="email"
+          name="email"
+          type="email"
+          class="form-control"
+          required
+          value="<%= form?.email || '' %>"
+        />
+      </div>
+
+      <div class="mb-3">
+        <label for="riskCategory" class="form-label">Risk Category</label>
+        <select id="riskCategory" name="riskCategory" class="form-select" required>
+          <option value="Low" <%= (form?.riskCategory === 'Low') ? 'selected' : '' %>>Low</option>
+          <option value="Medium" <%= (form?.riskCategory === 'Medium') ? 'selected' : '' %>>Medium</option>
+          <option value="High" <%= (form?.riskCategory === 'High') ? 'selected' : '' %>>High</option>
+        </select>
+      </div>
+
+      <div class="d-flex gap-2">
+        <button type="submit" class="btn btn-primary">Save Changes</button>
+        <a class="btn btn-outline-secondary" href="/clients/<%= clientt.id %>">Cancel</a>
+      </div>
+    </form>
+  </div>
+</section>
